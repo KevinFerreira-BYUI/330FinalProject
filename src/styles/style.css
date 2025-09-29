@@ -1,0 +1,27 @@
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+:root{
+    /* COLOR SCHEMA */
+    --color1: #DC0A2D;
+    --color2: #A9122B;
+    --color3: #F55973;
+    --color4: #2A2828;
+    --color5: #FFFFFF;
+
+    /* FONTS */
+
+}
+
+/* GENERAL CLASSES */
+.bg-color1{
+    background-color: var(--color1);
+}
+
+
+body{
+    background-color: var(--color4);
+}
+
+footer{
+    background-color: var(--color1);
+}
