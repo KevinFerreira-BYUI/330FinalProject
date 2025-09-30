@@ -55,6 +55,7 @@ export async function getPokeDetail(url) {
     const response = await fetch(url);
     const pokeData = await response.json();
     return {
+        id: pokeData.id,
         name: pokeData.name,
         type: pokeData.types.map(pType => pType.type.name).join(", "),
         img: pokeData.sprites.other['official-artwork'].front_default

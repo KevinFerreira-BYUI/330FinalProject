@@ -8,6 +8,7 @@ async function loadPokeDataTemplate() {
 
     for (const pokemon of pokemons){
         const details = await getPokeDetail(pokemon.url);
+        //console.log(details.id);
         // console.log(details.name);
         // console.log(details.type);
         // console.log(details.img);
