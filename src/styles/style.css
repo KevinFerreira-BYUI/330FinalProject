@@ -9,7 +9,8 @@
     --color5: #FFFFFF;
 
     /* FONTS */
-
+    --title-font: "Bungee", sans-serif;
+    --text-fonte: "Jersey 25", sans-serif;
 }
 
 /* GENERAL CLASSES */
@@ -17,14 +18,20 @@
     background-color: var(--color1);
 }
 
-
 body{
     background-color: var(--color4);
+    font-family: var(--text-fonte);
 }
 
 footer{
     background-color: var(--color1);
 }
+
+/* HEADER */
+a.nav-link{
+    font-family: var(--title-font);
+}
+
 
 /* INDEX MAIN */
 #poke-section {
@@ -34,6 +41,14 @@ footer{
   justify-items: center; 
   align-items: start; 
   padding: 20px;
+}
+
+#poke-section a{
+    text-decoration: none;
+}
+
+div.card-body{
+    font-size: 1.5rem;
 }
 
 

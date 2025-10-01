@@ -1,4 +1,5 @@
 import '../styles/style.css'
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { getAllPokemons, getPokemonByName, getPokemonById, getPokeDetail } from './API-data.mjs'
 
 async function loadPokeDataTemplate() {
@@ -18,8 +19,8 @@ async function loadPokeDataTemplate() {
 
         img.src = `${details.img}`;
         img.alt = `${details.name}`;
-        pName.textContent = `${details.name}`;
-        pType.textContent = `${details.type}`;
+        pName.textContent = `${details.name.toUpperCase()}`;
+        pType.textContent = `${details.type.toUpperCase()}`;
 
         container.appendChild(clone);
     };
