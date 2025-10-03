@@ -2,7 +2,7 @@ const ApiUrl = import.meta.env.VITE_SERVER_URL;
 
 export async function getAllPokemons() {
     try{
-        let response = await fetch(`${ApiUrl}pokemon`);
+        let response = await fetch(`${ApiUrl}pokemon/`);
     
         if (!response.ok){
             throw new Error(`Request error: ${response.status}`);

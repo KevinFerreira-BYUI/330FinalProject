@@ -47,14 +47,25 @@
         <main>
             <div class="container mt-5" id="principal-container">
                 
-                <nav class="navbar bg-body-black">
-                    <div class="container-fluid justify-content-center">
+                <div class="navbar bg-body-black change-850">
+                    <div id="div-searchPokeGen" class="container-fluid justify-content-evenly">
+
                         <form class="d-flex" role="search">
                             <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
                             <button class="btn btn-outline-success" type="submit">Search</button>
                         </form>
+                        
+                        <div class="btn-group dropend" style="font-size: 2rem;">
+                            <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #dc0a2d;">
+                                Generation
+                            </button>
+                            <ul id="ul-gen-list" class="dropdown-menu">
+
+                            </ul>
+                        </div>
+
                     </div>
-                </nav>
+                </div>
 
                 <section id="poke-section">
                     <template class="poke-card-template">

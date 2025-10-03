@@ -32,6 +32,16 @@ a.nav-link{
     font-family: var(--title-font);
 }
 
+#ul-gen-list li:hover{
+    background-color: blue;
+    cursor: pointer;
+}
+
+.yeahBro{
+    display: flex;
+    flex-direction: column;
+}
+
 
 /* INDEX MAIN */
 #poke-section {

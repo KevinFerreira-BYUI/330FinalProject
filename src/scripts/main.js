@@ -1,6 +1,7 @@
 import '../styles/style.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { getAllPokemons, getPokemonByName, getPokemonById, getPokeDetail } from './API-data.mjs'
+import { removeDropend, changeHeaderStyle, showGenList } from './dinamic-styles.mjs';
 
 async function loadPokeDataTemplate() {
     let pokemons = await getAllPokemons();
@@ -26,6 +27,18 @@ async function loadPokeDataTemplate() {
     };
 };
 
+// Load pokemons on the screen
 loadPokeDataTemplate();
 
+
+// Remove clas "dropend" from the shearch gen's
+removeDropend();
+window.addEventListener("resize", removeDropend);
+
+//
+changeHeaderStyle()/
+window.addEventListener("resize", changeHeaderStyle);
+
+//
+showGenList();
 
