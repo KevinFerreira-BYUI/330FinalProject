@@ -33,16 +33,14 @@ export function showGenList() {
         "Gen VI - Kalos",
         "Gen VII - Alola",
         "Gen VIII - Galar",
-        "Gen VIII - Galar",
         "Gen IX - Paldea"
     ];
 
     const genList = document.getElementById("ul-gen-list");
     gens.forEach(gen => {
         const li = document.createElement("li");
-        li.classList.add("ps-2");
+        li.classList.add("ps-2", "gen-item");
         li.textContent = gen;
         genList.appendChild(li);
-    });
-    
+    }); 
 };
