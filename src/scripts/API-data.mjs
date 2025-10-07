@@ -62,7 +62,13 @@ export async function getPokeDetail(url) {
     };
 };
 
-export async function getPokemonsByGen() {
+async function setGenParams(gen) {
+    const response = await fetch(`${ApiUrl}pokemon/${gen}`);
+    const data = await response.json();
+    return data;
+};
+
+export async function getPokemonsByGen(sim) {
     const gentItem = document.querySelectorAll(".gen-item");
     gentItem.forEach(item => {
         item.addEventListener("click", async function(element){
@@ -70,40 +76,57 @@ export async function getPokemonsByGen() {
             
             switch(generation){
                 case "Gen I - Kanto":
-                    console.log("Gen I - Kanto");
-                    let response = await fetch(`${ApiUrl}pokemon/?offset=0&limit=151`);
+                    const kanto = await setGenParams("?offset=0&limit=151");
+                    console.log(kanto);
+                    //console.log("Gen I - Kanto");
                     break;
 
                 case "Gen II - Johto":
-                    console.log("Gen II - Johto");
+                    const johto = await setGenParams("?offset=151&limit=100");
+                    console.log(johto);
+                    // console.log("Gen II - Johto");
                     break;
 
                 case "Gen III - Hoenn":
-                    console.log("Gen III - Hoenn");
+                    const hoenn = await setGenParams("?offset=251&limit=135");
+                    console.log(hoenn);
+                    //console.log("Gen III - Hoenn");
                     break;
 
                 case "Gen IV - Sinnoh":
-                    console.log("Gen IV - Sinnoh");
+                    const sinnoh = await setGenParams("?offset=386&limit=107");
+                    console.log(sinnoh);
+                    //console.log("Gen IV - Sinnoh");
                     break;
 
                 case "Gen V - Unova":
-                    console.log("Gen V - Unova");
+                    const unova = await setGenParams("?offset=493&limit=156");
+                    console.log(unova);
+                    //console.log("Gen V - Unova");
                     break;
 
                 case "Gen VI - Kalos":
-                    console.log("Gen VI - Kalos");
+                    const kalos = await setGenParams("?offset=649&limit=72");
+                    console.log(kalos);
+                    //console.log("Gen VI - Kalos");
                     break;
                 
                 case "Gen VII - Alola":
-                    console.log("Gen VII - Alola");
+                    const alola = await setGenParams("?offset=721&limit=88");
+                    console.log(alola);
+                    //console.log("Gen VII - Alola");
                     break;
 
                 case "Gen VIII - Galar":
-                    console.log("Gen VIII - Galar");
+                    const galar = await setGenParams("?offset=809&limit=95");
+                    console.log(galar);
+                    //console.log("Gen VIII - Galar");
                     break;
 
                 case "Gen IX - Paldea":
-                    console.log("Gen IX - Paldea");
+                    const paldea = await setGenParams("?offset=905&limit=120");
+                    console.log(paldea);
+                    //console.log("Gen IX - Paldea");
                     break;
 
                 default:

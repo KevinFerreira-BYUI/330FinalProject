@@ -5,6 +5,7 @@ import { removeDropend, changeHeaderStyle, showGenList } from './dinamic-styles.
 
 async function loadPokeDataTemplate() {
     let pokemons = await getKantoPokemons();
+    //let pokemons = await getPokemonsByGen();
     const template = document.querySelector(".poke-card-template");
     const container = document.getElementById("poke-section");
 
@@ -30,7 +31,6 @@ async function loadPokeDataTemplate() {
 // Load pokemons on the screen
 loadPokeDataTemplate();
 
-
 // Remove clas "dropend" from the shearch gen's
 removeDropend();
 window.addEventListener("resize", removeDropend);
@@ -43,5 +43,5 @@ window.addEventListener("resize", changeHeaderStyle);
 showGenList();
 
 //
-getPokemonsByGen();
+//getPokemonsByGen();
 
