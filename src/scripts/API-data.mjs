@@ -65,12 +65,13 @@ export async function getPokeDetail(url) {
 export async function getPokemonsByGen() {
     const gentItem = document.querySelectorAll(".gen-item");
     gentItem.forEach(item => {
-        item.addEventListener("click", function(element){
+        item.addEventListener("click", async function(element){
             const generation = element.target.textContent;
             
             switch(generation){
                 case "Gen I - Kanto":
                     console.log("Gen I - Kanto");
+                    let response = await fetch(`${ApiUrl}pokemon/?offset=0&limit=151`);
                     break;
 
                 case "Gen II - Johto":
