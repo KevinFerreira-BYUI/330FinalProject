@@ -66,27 +66,25 @@
                     </div>
                 </div>
 
-                <div class="card">
-                    <div class="card-header">Quote</div>
+                <div id="welcomeMsg" class="card">
+                    <div class="card-header">Welcome!!</div>
                     
                     <div class="card-body">
                         <blockquote class="blockquote">
-                            <p>A well-known quote, contained in a blockquote element.</p>
+                            <p>Choose a Pokemon generation</p>
                         </blockquote>
                     </div>
                 </div>
 
                 <section id="poke-section">
-                    <template class="poke-card-template">
-                        <a href="/">
-                            <div class="card p-4" style="width: 18rem;">
-                                <img src="" alt="" class="card-img-top">
+                    <template class="poke-card-template" data-filled="false">
+                            <div id="poke-card" class="card p-4" style="width: 18rem;">
+                                <img src="" alt="" class="card-img-top" id="pokemon-img">
                                 <div class="card-body">
                                     <p class="card-text text-center" id="poke-name"></p>
                                     <p class="card-text text-center" id="poke-type"></p>
                                 </div>
                             </div>
-                        </a>
                     </template>
                 </section>
 
