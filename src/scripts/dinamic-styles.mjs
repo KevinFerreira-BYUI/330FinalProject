@@ -11,15 +11,18 @@ export function removeDropend() {
 export function changeHeaderStyle() {
     const divHeader = document.getElementById("div-searchPokeGen");
     const dropendBtn = document.querySelector(".btn-group");
+    const spinner = document.getElementById("spinner");
 
     if(window.innerWidth <= 767){
         divHeader.classList.remove("justify-content-evenly");
         divHeader.classList.add("yeahBro");
         dropendBtn.classList.add("pt-3");
+        spinner.classList.add("pt-2");
     } else{
         divHeader.classList.add("justify-content-evenly");
         divHeader.classList.remove("yeahBro");
         dropendBtn.classList.remove("pt-3");
+        spinner.classList.remove("pt-2");
     }
 };
 

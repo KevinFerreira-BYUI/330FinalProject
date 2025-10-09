@@ -10,7 +10,7 @@ export async function getPokemonByName(pokemonName) {
         }
 
         let pokeData = await response.json();
-        console.log(pokeData);
+        //console.log(pokeData);
 
         return pokeData;
     } catch(error){
@@ -131,7 +131,7 @@ export async function getPokemonsByGen() {
                     const paldea = await setGenParams("?offset=905&limit=120");
                     loadPokeDataTemplate(paldea);
                     break;
-
+                    
                 default:
                     console.log("Generation doesn't found");
             }

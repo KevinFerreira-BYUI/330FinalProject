@@ -50,12 +50,12 @@
                 <div class="navbar bg-body-black change-850">
                     <div id="div-searchPokeGen" class="container-fluid justify-content-evenly">
 
-                        <form class="d-flex" role="search">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                            <button class="btn btn-outline-success" type="submit">Search</button>
+                        <form class="d-flex" role="search" action="/" method="get">
+                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search"/>
+                            <button id="btnSearchPokemon" class="btn btn-outline-danger" type="submit">Search</button>
                         </form>
                         
-                        <div class="btn-group dropend" style="font-size: 2rem;">
+                        <div id="gen-list" class="btn-group dropend" style="font-size: 2rem;">
                             <button type="button" class="btn btn-secondary btn-lg dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #dc0a2d;">
                                 Generation
                             </button>
@@ -63,6 +63,12 @@
 
                             </ul>
                         </div>
+
+                        <div id="spinner" class="d-flex align-items-center text-danger d-none" style="gap: 10px; font-size: 1.5rem; font-family: Bungee, sans-serif;">
+                            <strong role="status">Loading...</strong>
+                            <div class="spinner-border ms-auto" aria-hidden="true"></div>
+                        </div>
+
                     </div>
                 </div>
 

@@ -37,7 +37,7 @@ a.nav-link{
 }
 
 #ul-gen-list li:hover{
-    background-color: blue;
+    background-color: #dee4ed;
     cursor: pointer;
 }
 
@@ -48,6 +48,7 @@ a.nav-link{
 
 
 /* INDEX MAIN */
+
 #poke-section {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
