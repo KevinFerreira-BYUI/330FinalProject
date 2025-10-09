@@ -50,6 +50,6 @@ export async function loadPokeDataTemplate(data) {
             container.appendChild(clone);
             spinner.classList.add("d-none");
             genList.classList.remove("d-none");
-        }, 1500);
+        }, 3000);
     };
 };
