@@ -8,15 +8,17 @@ export function getParams(){
 
 export async function loadPokeCardByName(){
     const btnSearchPokemon = document.getElementById("btnSearchPokemon");
-    const pokemonName = getParams().toLowerCase().replace(/\s+/g, "");
 
-    btnSearchPokemon.addEventListener("click", async function() {
+    if (getParams() == null){
+        console.log("its null bro")
+    } else {
+        let pokemonName = getParams().toLowerCase().replace(/\s+/g, "");
         console.log(pokemonName)
 
         const pokemon = await getPokemonByName(pokemonName);
         console.log(pokemon)
-    });
-    
+    };
+
 };
 
 export async function loadPokeDataTemplate(data) {
