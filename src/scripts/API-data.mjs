@@ -14,7 +14,7 @@ export async function getPokemonByName(pokemonName) {
 
         return pokeData;
     } catch(error){
-        console.error(`Error: ${error}`);
+        console.error(`Pokemon doesn't exist: ${error}`);
     }
 };
 

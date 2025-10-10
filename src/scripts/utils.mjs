@@ -17,6 +17,10 @@ export async function loadPokeCardByName(){
 
         const pokemon = await getPokemonByName(pokemonName);
         console.log(pokemon)
+
+        if (window.location.search){
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     };
 
 };
