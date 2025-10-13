@@ -18,5 +18,5 @@ showGenList();
 //Load pokemons on the screen
 getPokemonsByGen();
 
-//
+//Load a specifc pokemon card
 loadPokeCardByName();

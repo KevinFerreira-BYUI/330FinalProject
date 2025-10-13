@@ -1,20 +1,29 @@
 import { loadPokeDataTemplate } from "./utils.mjs";
+import { Modal } from "bootstrap/dist/js/bootstrap.bundle.min";
 const ApiUrl = import.meta.env.VITE_SERVER_URL;
 
 export async function getPokemonByName(pokemonName) {
     try{
         let response = await fetch(`${ApiUrl}pokemon/${pokemonName}`);
+        const spinner = document.getElementById("spinner");
     
         if (!response.ok){
             throw new Error(`Request error: ${response.status}`);
         }
 
+        //spinner.classList.remove("d-none");
+
         let pokeData = await response.json();
-        //console.log(pokeData);
 
         return pokeData;
     } catch(error){
-        console.error(`Pokemon doesn't exist: ${error}`);
+        console.log(error);
+        const modalBody = document.querySelector(".modal-body");
+        const modalElement = document.getElementById("errorModal");
+        const modal = new Modal(modalElement);
+        modalBody.textContent = `Pokemon "${pokemonName}" doesn't found. Try Again!`;
+        modal.show();
+        //console.clear();
     }
 };
 
