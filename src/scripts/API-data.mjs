@@ -11,9 +11,7 @@ export async function getPokemonByName(pokemonName) {
             throw new Error(`Request error: ${response.status}`);
         }
 
-        //spinner.classList.remove("d-none");
-
-        let pokeData = await response.json();
+        const pokeData = await response.json();
 
         return pokeData;
     } catch(error){
@@ -23,7 +21,7 @@ export async function getPokemonByName(pokemonName) {
         const modal = new Modal(modalElement);
         modalBody.textContent = `Pokemon "${pokemonName}" doesn't found. Try Again!`;
         modal.show();
-        //console.clear();
+        console.clear();
     }
 };
 

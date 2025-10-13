@@ -53,7 +53,6 @@ async function BuildPokeDataTemplateByName(getPokemon){
     spinner.classList.add("d-none");
 };
 
-
 export async function loadPokeDataTemplate(data) {
     //console.log(data.results)
     const pokemons = await data.results;
@@ -80,6 +79,7 @@ export async function loadPokeDataTemplate(data) {
         img.src = `${details.img}`;
         img.alt = `${details.name}`;
         pName.textContent = `${details.name.toUpperCase()}`;
+        pName.dataset.name = `${details.name.toLowerCase()}`;
         pType.textContent = `${details.type.toUpperCase()}`;
 
         container.appendChild(clone);
@@ -89,3 +89,19 @@ export async function loadPokeDataTemplate(data) {
     genList.classList.remove("d-none");
 };
 
+export function getPokeNameInCard(){
+    const checkExist = setInterval(() => {
+        const btnCatch = document.querySelectorAll("#btnCatch");
+        
+
+        if(btnCatch.length > 0){
+            btnCatch.forEach((btn) => {
+                btn.addEventListener("click", function(){
+                    console.log("yeaaah");
+                });
+            });
+            clearInterval(checkExist);
+        }
+
+    }, 100);
+}
