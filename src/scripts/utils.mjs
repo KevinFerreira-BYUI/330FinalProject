@@ -93,11 +93,14 @@ export function getPokeNameInCard(){
     const checkExist = setInterval(() => {
         const btnCatch = document.querySelectorAll("#btnCatch");
         
+        
 
         if(btnCatch.length > 0){
+
             btnCatch.forEach((btn) => {
-                btn.addEventListener("click", function(){
-                    console.log("yeaaah");
+                const dataName = document.querySelectorAll("[data-name]");
+                btn.addEventListener("click", function(){ 
+                    console.log(dataName);
                 });
             });
             clearInterval(checkExist);
