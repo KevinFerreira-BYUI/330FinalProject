@@ -8,7 +8,7 @@ export default defineConfig(({ command }) => {
       rollupOptions: {
         input: {
           main: resolve(__dirname, 'index.html'),
-          pokeBox: resolve(__dirname, 'pages/pokebox.html'),
+          pokebox: resolve(__dirname, 'pages/pokebox.html'),
         },
       },
     },
