@@ -2,11 +2,10 @@ import '../styles/style.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { getPokemonsByGen } from './API-data.mjs'
 import { removeDropend, changeHeaderStyle, showGenList } from './dinamic-styles.mjs';
-import { loadPokeCardByName, getPokeNameInCard } from './utils.mjs';
+import { loadPokeCardByName, buildPokeBoxTemplpate } from './utils.mjs';
+
 
 const path = window.location.pathname;
-
-
 switch (path){
 
     case ("/"):
@@ -26,13 +25,12 @@ switch (path){
 
         //Load a specifc pokemon card
         loadPokeCardByName();
-
-        //
-        getPokeNameInCard();
     break;
 
-    case("/pages/your-pokemon.html"):
-        console.log("your pokemon")
+    case("/pages/pokeBox.html"):
+    
+        // Build template for the pokemon box
+        buildPokeBoxTemplpate();
     break;
 
     default:

@@ -5,7 +5,6 @@ const ApiUrl = import.meta.env.VITE_SERVER_URL;
 export async function getPokemonByName(pokemonName) {
     try{
         let response = await fetch(`${ApiUrl}pokemon/${pokemonName}`);
-        const spinner = document.getElementById("spinner");
     
         if (!response.ok){
             throw new Error(`Request error: ${response.status}`);
@@ -16,10 +15,12 @@ export async function getPokemonByName(pokemonName) {
         return pokeData;
     } catch(error){
         console.log(error);
-        const modalBody = document.querySelector(".modal-body");
+        const modalMsg = document.querySelector(".modalMsg");
+        const modalTitle = document.querySelector(".modal-title");
         const modalElement = document.getElementById("errorModal");
         const modal = new Modal(modalElement);
-        modalBody.textContent = `Pokemon "${pokemonName}" doesn't found. Try Again!`;
+        modalTitle.textContent = "Error";
+        modalMsg.textContent = `Pokemon "${pokemonName}" doesn't found. Try Again!`;
         modal.show();
         console.clear();
     }
