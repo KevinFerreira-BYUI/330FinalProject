@@ -28,7 +28,7 @@ switch (path){
     break;
 
     case("/pages/pokeBox.html"):
-    
+
         // Build template for the pokemon box
         buildPokeBoxTemplpate();
     break;
