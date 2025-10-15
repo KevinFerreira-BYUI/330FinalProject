@@ -6,9 +6,11 @@ import { loadPokeCardByName, buildPokeBoxTemplpate } from './utils.mjs';
 
 
 const path = window.location.pathname;
-switch (path){
+switch (true){
 
-    case ("/"):
+    case (path === "/"):
+        // Index Page
+
         // Remove class "dropend" from the shearch gen's
         removeDropend();
         window.addEventListener("resize", removeDropend);
@@ -31,7 +33,9 @@ switch (path){
         loadPokeCardByName();
     break;
 
-    case("/pages/pokeBox.html"):
+    case(path.includes("pokeBox")):
+        // PokeBox Page
+
         // change some styles from Header
         changeHeaderStylePokeBox();
         window.addEventListener("resize", changeHeaderStylePokeBox);
