@@ -1,5 +1,16 @@
 import { defineConfig } from 'vite'
+import { resolve } from 'path'
 
-export default defineConfig({
-  base: './', 
+export default defineConfig(({ command }) => {
+  return {
+    base: command === 'serve' ? '/' : './',
+    build: {
+      rollupOptions: {
+        input: {
+          main: resolve(__dirname, 'index.html'),
+          pokeBox: resolve(__dirname, 'pages/pokeBox.html'),
+        },
+      },
+    },
+  }
 })
