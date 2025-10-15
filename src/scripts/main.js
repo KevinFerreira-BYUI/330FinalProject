@@ -33,7 +33,7 @@ switch (true){
         loadPokeCardByName();
     break;
 
-    case(path.includes("pokeBox")):
+    case(path.includes("pokebox")):
         // PokeBox Page
 
         // change some styles from Header
