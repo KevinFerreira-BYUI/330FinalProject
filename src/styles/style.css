@@ -23,6 +23,11 @@ body{
     font-family: var(--text-fonte);
 }
 
+.mt-content-pokebox{
+    margin-top: 100px;
+}
+
+
 footer{
     background-color: var(--color1);
 }

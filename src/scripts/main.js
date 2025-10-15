@@ -1,7 +1,7 @@
 import '../styles/style.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { getPokemonsByGen } from './API-data.mjs'
-import { removeDropend, changeHeaderStyle, showGenList } from './dinamic-styles.mjs';
+import { removeDropend, changeHeaderStyle, changeHeaderStylePokeBox, changeAligmentFromFooter, showGenList } from './dinamic-styles.mjs';
 import { loadPokeCardByName, buildPokeBoxTemplpate } from './utils.mjs';
 
 
@@ -17,6 +17,10 @@ switch (path){
         changeHeaderStyle();
         window.addEventListener("resize", changeHeaderStyle);
 
+        // change footer aligment
+        changeAligmentFromFooter();
+        window.addEventListener("resize", changeAligmentFromFooter);
+
         // List of all pokemons generations
         showGenList();
 
@@ -28,6 +32,13 @@ switch (path){
     break;
 
     case("/pages/pokeBox.html"):
+        // change some styles from Header
+        changeHeaderStylePokeBox();
+        window.addEventListener("resize", changeHeaderStylePokeBox);
+
+        // change footer aligment
+        changeAligmentFromFooter();
+        window.addEventListener("resize", changeAligmentFromFooter);
 
         // Build template for the pokemon box
         buildPokeBoxTemplpate();
