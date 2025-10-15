@@ -15,7 +15,7 @@ vite<!DOCTYPE html>
         <script type="module" src="/src/scripts/main.js" defer></script>
         <title>PokePedia | POKEBOX</title>
     </head>
-    <body>
+    <body class="d-flex flex-column min-vh-100">
         <header class="navbar fixed-top navbar-expand-lg bg-color1">
             <nav class="navbar navbar-expand-lg bg-color1 w-100">
                 <div class="container-fluid">
@@ -103,24 +103,26 @@ vite<!DOCTYPE html>
             </div>
         </main>
 
-        <footer class="w-100">
-            <div class="container text-center">
-                <div id="gridFooterContainer" class="row">
+        <footer class="w-100 p-3 mt-auto">
 
-                    <div class="col">
-                        <p>This website was developed for academic purposes for the Web Front-end Development II course at BYU–Idaho through BYU Pathway Worldwide.</p>
+            <div class="container">
+                <div id="gridFooterContainer" class="row gap-3">
+
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-center" style="font-size: 1.5rem;">Developed for the Web Front-end Development II course at BYU–Idaho.</p>
                     </div>
 
-                    <div class="col">
-                        <p>&copy; 2025 PokePidea. Developed by Kevin. All rights reserved.</p>
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-center" style="font-size: 1.5rem;">&copy; 2025 PokePidea. Developed by Kevin. All rights reserved.</p>
                     </div>
 
-                    <div class="col">
-                        <p>Kevin G. Ferreira</p>
+                    <div class="grid-col col d-flex justify-content-center align-items-center">
+                        <p class="text-right" style="font-size: 1.5rem;">Kevin G. Ferreira</p>
                     </div>
 
                 </div>
             </div>
+
         </footer>
     </body>
 </html>
