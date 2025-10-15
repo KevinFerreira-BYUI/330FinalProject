@@ -1,6 +1,6 @@
 import '../styles/style.css'
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
-import { getPokemonsByGen } from './API-data.mjs'
+import { getPokemonsByGen, oaksAdvice } from './API-data.mjs'
 import { removeDropend, changeHeaderStyle, changeHeaderStylePokeBox, changeAligmentFromFooter, showGenList } from './dinamic-styles.mjs';
 import { loadPokeCardByName, buildPokeBoxTemplpate } from './utils.mjs';
 
@@ -31,6 +31,10 @@ switch (true){
 
         //Load a specifc pokemon card
         loadPokeCardByName();
+
+        // const test = await oaksAdvice();
+        // console.log(test);
+
     break;
 
     case(path.includes("pokebox")):

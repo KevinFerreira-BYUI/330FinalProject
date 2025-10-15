@@ -1,6 +1,24 @@
 import { loadPokeDataTemplate } from "./utils.mjs";
 import { Modal } from "bootstrap/dist/js/bootstrap.bundle.min";
 const ApiUrl = import.meta.env.VITE_SERVER_URL;
+const ApiUrl2 = import.meta.env.VITE_API_ADVICE_URL;
+
+export async function oaksAdvice() {
+    try{
+        const response = await fetch(ApiUrl2);
+
+        if(!response.ok){
+            throw new Error(`Request error: ${response.status}`);
+        }
+
+        const data = await response.json();
+        return data.slip.advice;
+
+    } catch (error){
+        console.log(error.message);
+    }
+}
+
 
 export async function getPokemonByName(pokemonName) {
     try{

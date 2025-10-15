@@ -1,5 +1,5 @@
 
-import { getPokeDetail, getPokemonByName } from "./API-data.mjs";
+import { getPokeDetail, getPokemonByName, oaksAdvice } from "./API-data.mjs";
 import { Modal } from "bootstrap/dist/js/bootstrap.bundle.min";
 
 export function getParams(){
@@ -100,7 +100,7 @@ export function releasePokemon(){
                     modalElement.addEventListener("hidden.bs.modal", function(){
                         location.reload();
                     });
-                    
+
                 });
             }
         });
@@ -170,10 +170,12 @@ export async function loadPokeDataTemplate(data) {
     genList.classList.remove("d-none");
 };
 
-export function getPokeNameInCard(){
+export async function getPokeNameInCard(){
+    const advice = await oaksAdvice();
 
     const observer = new MutationObserver(() => {
-        const btnCatch = document.querySelectorAll(".btnCatch");
+        const btnCatch = document.querySelectorAll(".btnCatch");        
+
         btnCatch.forEach(btn => {
             if (!btn.dataset.listenerAdded) {
                 btn.dataset.listenerAdded = true; 
@@ -183,16 +185,19 @@ export function getPokeNameInCard(){
                     const pokemomName = nameElement.dataset.name;
                     
                     const modalMsg = document.querySelector(".modalMsg");
+                    const modalMsg2 = document.querySelector(".modalMsg2");
                     const modalTitle = document.querySelector(".modal-title");
                     const modalElement = document.querySelector(".modalContainer");
                     const modal = new Modal(modalElement);
                     
                     const pokeData = await getPokemonByName(pokemomName);
-                    
+
                     if (pokeData){
                         setLocalStorage(pokemomName, pokeData);
+
                         modalTitle.textContent = "Gotcha!";
                         modalMsg.textContent = `${pokemomName.toUpperCase()} Catched!`;
+                        modalMsg2.innerHTML = `Prof Oak Advice: <i>${advice}</i>`;
                         modal.show();
                     }
                 });
