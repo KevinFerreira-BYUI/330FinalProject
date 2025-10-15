@@ -47,8 +47,6 @@ export async function loadPokeCardByName(){
     if (window.location.search){
         window.history.replaceState({}, document.title, window.location.pathname);
     }
-
-    getPokeNameInCard();
 };
 
 export function buildPokeBoxTemplpate(){
@@ -113,7 +111,6 @@ async function BuildPokeDataTemplateByName(getPokemon){
     const template = document.querySelector(".poke-card-template");
     const container = document.getElementById("poke-section");
     const cardWelcome = document.getElementById("welcomeMsg");
-    const spinner = document.getElementById("spinner");
 
     cardWelcome.classList.add("hidden");
     container.querySelectorAll("#poke-card").forEach(card => card.remove());
@@ -129,8 +126,8 @@ async function BuildPokeDataTemplateByName(getPokemon){
     pName.dataset.name = `${pokemon.name.toLowerCase()}`;
     pType.textContent = `${pokemon.types.map(pType => pType.type.name).join(", ").toUpperCase()}`;
 
-    container.appendChild(clone);
-    spinner.classList.add("d-none");
+    getSpecificPokeNameInCard();
+    container.appendChild(clone);    
 };
 
 export async function loadPokeDataTemplate(data) {
@@ -205,4 +202,32 @@ export async function getPokeNameInCard(){
         });
     });
     observer.observe(document.body, { childList: true, subtree: true });
+}
+
+export async function getSpecificPokeNameInCard(){
+    const advice = await oaksAdvice();
+    const btnCatch = document.querySelector(".btnCatch");        
+
+    btnCatch.addEventListener("click", async function(){
+        const card = document.querySelector(".poke-card-name");
+        const nameElement = card.querySelector("[data-name]");
+        const pokemomName = nameElement.dataset.name;
+                    
+        const modalMsg = document.querySelector(".modalMsg");
+        const modalMsg2 = document.querySelector(".modalMsg2");
+        const modalTitle = document.querySelector(".modal-title");
+        const modalElement = document.querySelector(".modalContainer");
+        const modal = new Modal(modalElement);
+                    
+        const pokeData = await getPokemonByName(pokemomName);
+
+        if (pokeData){
+            setLocalStorage(pokemomName, pokeData);
+
+            modalTitle.textContent = "Gotcha!";
+            modalMsg.textContent = `${pokemomName.toUpperCase()} Catched!`;
+            modalMsg2.innerHTML = `Prof Oak Advice: <i>${advice}</i>`;
+            modal.show();
+        }
+    });
 }
