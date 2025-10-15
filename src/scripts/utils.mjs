@@ -88,6 +88,7 @@ export function releasePokemon(){
                     const card = btn.closest(".poke-card-name");
                     const nameElement = card.querySelector("[data-name]");
                     const pokemomName = nameElement.dataset.name;
+
                     const modalMsg = document.querySelector(".modalMsg");
                     const modalElement = document.getElementById("releaseModal");
                     const modal = new Modal(modalElement);
@@ -95,6 +96,11 @@ export function releasePokemon(){
                     deleteFromLocalstorage(pokemomName);
                     modalMsg.innerHTML = `${pokemomName.toUpperCase()} Released!`;
                     modal.show();
+
+                    modalElement.addEventListener("hidden.bs.modal", function(){
+                        location.reload();
+                    });
+                    
                 });
             }
         });
