@@ -168,15 +168,15 @@ export async function loadPokeDataTemplate(data) {
 };
 
 export async function getPokeNameInCard(){
-
-    const observer = new MutationObserver(() => {
+    const advice = await oaksAdvice();
+    const observer = new MutationObserver(function() {
         const btnCatch = document.querySelectorAll(".btnCatch");        
 
         btnCatch.forEach(btn => {
             if (!btn.dataset.listenerAdded) {
-                btn.dataset.listenerAdded = true; 
+                btn.dataset.listenerAdded = true;
                 btn.addEventListener("click", async function(){
-                    const advice = await oaksAdvice();
+                    //const advice = await oaksAdvice();
                     const card = btn.closest(".poke-card-name");
                     const nameElement = card.querySelector("[data-name]");
                     const pokemomName = nameElement.dataset.name;
