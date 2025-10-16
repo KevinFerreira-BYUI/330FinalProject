@@ -158,17 +158,16 @@ export async function loadPokeDataTemplate(data) {
         pName.dataset.name = `${details.name.toLowerCase()}`;
         pType.textContent = `${details.type.toUpperCase()}`;
 
+        getPokeNameInCard();
         container.appendChild(clone);
     };
 
-    getPokeNameInCard();
 
     spinner.classList.add("d-none");
     genList.classList.remove("d-none");
 };
 
 export async function getPokeNameInCard(){
-    const advice = await oaksAdvice();
 
     const observer = new MutationObserver(() => {
         const btnCatch = document.querySelectorAll(".btnCatch");        
@@ -177,6 +176,7 @@ export async function getPokeNameInCard(){
             if (!btn.dataset.listenerAdded) {
                 btn.dataset.listenerAdded = true; 
                 btn.addEventListener("click", async function(){
+                    const advice = await oaksAdvice();
                     const card = btn.closest(".poke-card-name");
                     const nameElement = card.querySelector("[data-name]");
                     const pokemomName = nameElement.dataset.name;
@@ -206,7 +206,7 @@ export async function getPokeNameInCard(){
 
 export async function getSpecificPokeNameInCard(){
     const advice = await oaksAdvice();
-    const btnCatch = document.querySelector(".btnCatch");        
+    const btnCatch = document.getElementById("btnCatch");        
 
     btnCatch.addEventListener("click", async function(){
         const card = document.querySelector(".poke-card-name");
